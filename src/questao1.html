@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>Title
+<body>
+
+
+<li>
+
+    <u><a></a>
+    </u>
+
+</li>
+
+
+
+<input type="text" name="titulo"><input>
+<input type="text" name="autor"><input>
+<input type="text" name
+</body>
+</html>
+
+
+
+/*
+------- app.js-------
+
+
+index.js
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
+ReactDOM.render(
+(
+<BrowserRouter>
+    <App />
+</BrowserRouter>
+),
+document.getElementById('root'));
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: http://bit.ly/CRA-PWA
+serviceWorker.unregister();
+------------------------------------------------------
+main.js
+
+
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom'
+import Produto from "./Produto";
+
+class Principal extends Component {
+render(){
+return (
+<Switch>
+    <Route exact path='/' component={Home} />
+    <Route path='/produtos' component={Produto} />
+</Switch>
+)
+}
+}
+const Home = () => (
+<div>
+    <h1>Bem vindo ao sistema!</h1>
+</div>
+)
+
+export default Principal;
+------------------------------------------------
+produto.js
+
+import React, { Component } from 'react';
+
+class Produto extends Component {
+render() {
+
+return (
+<div>
+    <CadastroProduto />
+    <ListaProduto />
+</div>
+)
+}
+}
+
+class CadastroProduto extends React.Component {
+constructor(props) {
+super(props);
+this.handleSalvar = this.handleSalvar.bind(this);
+}
+
+handleSalvar(){
+// const form = FormData(document.getElementById ( 'produto-form' ));
+// console.log(form);
+// const lista = fetch('http://127.0.0.1:8080/produtos', {
+//     method: 'POST',
+//     Body:form
+// })
+
+fetch('http://127.0.0.1:8080/produtos', {
+method: 'POST',
+headers: {
+'Accept': 'application/json',
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+"id":"",
+"nome":"teste2"
+})
+})
+}
+render(){
+return (
+<form id="produto-form">
+    <label>Produto:</label>
+    <input
+            type="text"
+            name="nome"
+    />
+    <button onClick={this.handleSalvar}>
+        Salvar
+    </button>
+</form>
+)
+}
+}
+
+class ListaProduto extends React.Component {
+render(){
+return (
+<table><tr><td>nenhum</td></tr></table>
+)
+}
+}
+export default Produto;
+---------------------------------------------------
+#flex-nav {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: center;
+height: 50px;
+padding: 10px;
+}
+
+.flex-menu-item {
+width: 100px;
+background-color: lightgoldenrodyellow;
+margin: 10px 10px;
+text-align: center;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+align-content: center;
+}
+-----------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Exercicio1.css">
+</head>
+<body>
+
+<header>
+    <nav id="flex-nav">
+        <div class="flex-menu-item">Início</div>
+        <div class="flex-menu-item">Produtos</div>
+        <div class="flex-menu-item">Produtos</div>
+        <div class="flex-menu-item">Clientes</div>
+        <div class="flex-menu-item">Blog</div>
+        <div class="flex-menu-item">Sobre</div>
+    </nav>
+</header>
+</body>
+</html>
+
+
+
+$ git config --global user.name "?Seu nome vai aqui...?"
+$ git config --global user.email ?seu-email@seu-servidor.com
+
+
+git init
+git add .
+git commit -m "??"
+git remote add origin https://github.com/UDESC-IBIRAMA
+git push -u origin master
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
