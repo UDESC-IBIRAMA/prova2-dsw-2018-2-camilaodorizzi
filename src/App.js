@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
-import Principal from './Main';
+import Principal from './main';
 
 class App extends Component {
     state = {
